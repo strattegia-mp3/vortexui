@@ -10,7 +10,7 @@ export function CTA() {
       className="relative overflow-hidden px-6 py-20 sm:px-10 lg:px-16"
       aria-labelledby="cta-heading"
     >
-      {/* Background Glow - Atualizado para o Hue 290 (Púrpura) */}
+      {/* Background Glow */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{

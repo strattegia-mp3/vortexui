@@ -51,7 +51,7 @@ export function Testimonials() {
                 border: "1px solid var(--color-border-subtle)",
               }}
             >
-              {/* Quotation mark decoration - Atualizado para Hue 290 */}
+              {/* Quotation mark decoration */}
               <div
                 className="font-display pointer-events-none absolute right-6 top-4 select-none text-7xl font-black leading-none"
                 style={{ color: "oklch(58% 0.22 290 / 0.08)" }}
@@ -67,7 +67,7 @@ export function Testimonials() {
                     key={i}
                     size={14}
                     className="fill-current"
-                    style={{ color: "oklch(78% 0.2 55)" }} /* Dourado mantido */
+                    style={{ color: "oklch(78% 0.2 55)" }} /* Dourado */
                   />
                 ))}
               </div>
@@ -95,8 +95,8 @@ export function Testimonials() {
                   style={{
                     background:
                       index === 0
-                        ? "linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700))" // Gradiente Púrpura
-                        : "linear-gradient(135deg, var(--color-accent-400), var(--color-accent-600))", // Gradiente Magenta
+                        ? "linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700))"
+                        : "linear-gradient(135deg, var(--color-accent-400), var(--color-accent-600))",
                   }}
                 >
                   {testimonial.avatar}

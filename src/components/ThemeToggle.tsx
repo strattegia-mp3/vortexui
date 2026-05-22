@@ -35,7 +35,6 @@ export function ThemeToggle() {
       aria-label="Alternar tema"
       title="Alternar tema"
     >
-      {/* O hover State no CSS inline usando pseudo-classes do Tailwind */}
       <div className="absolute inset-0 rounded-full transition-colors hover:bg-[var(--color-border-subtle)]" />
 
       <AnimatePresence mode="wait" initial={false}>

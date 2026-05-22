@@ -15,7 +15,7 @@ export function Hero() {
       id="inicio"
       className="relative flex min-h-screen items-center overflow-hidden px-6 pb-20 pt-28 sm:px-10 lg:px-16"
     >
-      {/* Background blobs definidos no globals.css */}
+      {/* Background blobs */}
       <div
         className="bg-blob-1 pointer-events-none absolute -left-48 top-10"
         aria-hidden
@@ -25,7 +25,7 @@ export function Hero() {
         aria-hidden
       />
 
-      {/* Gradiente adicional inline atualizado para Púrpura (290) e Magenta (330) */}
+      {/* Gradiente adicional inline */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{

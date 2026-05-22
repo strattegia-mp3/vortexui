@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Sora, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
       "O único evento online que revela como arquitetos sênior projetam sistemas que não quebram sob pressão. Vagas limitadas.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og/og-image.webp",
         width: 1200,
         height: 630,
         alt: "VortexUI — Masterclass Arquitetura Escalável",
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     title: "VortexUI — Masterclass Arquitetura Escalável",
     description:
       "Aprenda a arquitetar sistemas que suportam milhões de usuários. 100% gratuito.",
-    images: ["/og-image.webp"],
+    images: ["/og/og-image.webp"],
   },
   robots: {
     index: true,
@@ -92,18 +93,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "./favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
 export const viewport: Viewport = {
-  // Cores atualizadas para combinar perfeitamente com os tons Púrpura do globals.css
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbf8fc" }, // Aproximação do --surf-0 light
-    { media: "(prefers-color-scheme: dark)", color: "#150b1a" }, // Aproximação do --surf-0 dark
+    { media: "(prefers-color-scheme: light)", color: "#fbf8fc" },
+    { media: "(prefers-color-scheme: dark)", color: "#150b1a" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -120,10 +120,10 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${sora.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
-      suppressHydrationWarning // Essencial para o next-themes não gerar erros
+      suppressHydrationWarning
     >
       <head>
-        {/* JSON-LD Structured Data - Otimizado para passar na validação do Google */}
+        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -161,6 +161,11 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>{children}</ThemeProvider>
+
+        {/* Vercel Analytics (Métricas nativas do painel Vercel) */}
+        <Analytics />
+
+        {/* Google Analytics (Carregamento assíncrono e otimizado) */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}

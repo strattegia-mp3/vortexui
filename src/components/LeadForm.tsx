@@ -264,13 +264,13 @@ function InputField({
                 : "var(--color-border-default)"
             }`,
             color: "var(--color-text-primary)",
-            caretColor: "var(--color-brand-500)", // Atualizado para Púrpura
+            caretColor: "var(--color-brand-500)",
           }}
           onFocus={(e) => {
             if (!hasError) {
               e.currentTarget.style.borderColor = "var(--color-brand-500)";
               e.currentTarget.style.boxShadow =
-                "0 0 0 3px oklch(58% 0.22 290 / 0.12)"; // Halo púrpura (Hue 290)
+                "0 0 0 3px oklch(58% 0.22 290 / 0.12)";
             }
           }}
           onBlur={(e) => {
@@ -373,7 +373,7 @@ export function LeadForm() {
       className="glass-strong relative w-full overflow-hidden rounded-3xl p-6 sm:p-8"
       style={{ boxShadow: "var(--shadow-card)" }}
     >
-      {/* Decorative corner glow - Atualizado para Hue 290 */}
+      {/* Decorative corner glow */}
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full"
         style={{
@@ -408,7 +408,7 @@ export function LeadForm() {
                 <div
                   className="flex h-7 w-7 items-center justify-center rounded-lg"
                   style={{
-                    background: "oklch(58% 0.22 290 / 0.15)", // Fundo Púrpura sutil
+                    background: "oklch(58% 0.22 290 / 0.15)",
                     border: "1px solid oklch(58% 0.22 290 / 0.3)",
                   }}
                 >
@@ -486,7 +486,7 @@ export function LeadForm() {
                     exit={{ opacity: 0, height: 0 }}
                     className="flex items-start gap-2.5 rounded-xl p-3.5 text-sm"
                     style={{
-                      background: "oklch(62% 0.24 25 / 0.1)", // Vermelho Erro
+                      background: "oklch(62% 0.24 25 / 0.1)",
                       border: "1px solid oklch(62% 0.24 25 / 0.3)",
                       color: "var(--color-error-500)",
                     }}
@@ -512,7 +512,6 @@ export function LeadForm() {
                   whileTap={isSubmitting ? {} : { scale: 0.985 }}
                   className="animate-pulse-glow cursor-pointer relative mt-1 flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-xl px-6 py-3.5 text-sm font-semibold text-white outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70"
                   style={{
-                    // Gradiente Púrpura atualizado
                     background:
                       "linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%)",
                     boxShadow: isSubmitting

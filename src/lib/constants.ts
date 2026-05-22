@@ -9,13 +9,35 @@ import {
 } from "lucide-react";
 import { BrandLogo, Benefit, Testimonial, EventStat } from "@/types";
 
-// Textos da Navbar
+// ============================================================================
+// GLOBAL & BRAND
+// ============================================================================
+
+/**
+ * Nome oficial da marca utilizado globalmente na aplicação (Navbar, Footer, SEO).
+ */
+export const BRAND_NAME = "VortexUI";
+
+// ============================================================================
+// NAVBAR
+// ============================================================================
+
+/**
+ * Textos e rótulos exibidos na barra de navegação superior fixada.
+ */
 export const NAVBAR_TEXT = {
   liveBadge: "Evento ao vivo · 24 Jan",
   ctaButton: "Garantir vaga",
 };
 
-// Textos da seção Hero (Início)
+// ============================================================================
+// HERO SECTION (INÍCIO)
+// ============================================================================
+
+/**
+ * Textos principais da primeira dobra da página (Hero).
+ * Inclui os títulos de alto impacto, descrições e prova social rápida.
+ */
 export const HERO_SECTION_TEXT = {
   badge: "Masterclass · Online · 100% Gratuita",
   titleStart: "Arquitete sistemas ",
@@ -28,7 +50,20 @@ export const HERO_SECTION_TEXT = {
   socialProofText: "4.200+ engenheiros inscritos",
 };
 
-// Dados dos avatares de prova social na Hero
+/**
+ * Dados quantitativos exibidos logo abaixo do texto principal na Hero.
+ * Utiliza ícones do Lucide React.
+ */
+export const EVENT_STATS: EventStat[] = [
+  { icon: Users, value: "4.200+", label: "Engenheiros inscritos" },
+  { icon: Clock, value: "3h30", label: "De conteúdo denso" },
+  { icon: CalendarDays, value: "Ao vivo", label: "Com sessão de Q&A" },
+];
+
+/**
+ * Configuração visual dos avatares sobrepostos (Prova Social da Hero).
+ * Define as iniciais e a cor de fundo de cada avatar, adaptados à paleta Púrpura/Magenta.
+ */
 export const SOCIAL_AVATARS = [
   { initials: "RB", color: "#a855f7" }, // Púrpura
   { initials: "CM", color: "#ec4899" }, // Pink
@@ -37,7 +72,13 @@ export const SOCIAL_AVATARS = [
   { initials: "AO", color: "#0ea5e9" }, // Azul
 ];
 
-// Mensagens de Validação do Formulário (Zod)
+// ============================================================================
+// LEAD FORM & VALIDATION (CAPTURA)
+// ============================================================================
+
+/**
+ * Mensagens de erro padronizadas utilizadas pelo Zod no React Hook Form.
+ */
 export const VALIDATION_MESSAGES = {
   nameRequired: "Seu nome é obrigatório.",
   nameMin: "Nome deve ter pelo menos 2 caracteres.",
@@ -48,7 +89,10 @@ export const VALIDATION_MESSAGES = {
   emailMax: "E-mail muito longo.",
 };
 
-// Textos do Componente LeadForm
+/**
+ * Textos estruturais do componente de formulário de captura de leads.
+ * Concentra os labels, placeholders, estados do botão e mensagens de feedback da API.
+ */
 export const LEAD_FORM_TEXTS = {
   badge: "Vagas Limitadas",
   title: "Reserve sua vaga gratuita",
@@ -78,11 +122,21 @@ export const LEAD_FORM_TEXTS = {
   },
 };
 
-// Textos da seção de Trust (Logos)
+// ============================================================================
+// TRUST SECTION (EMPRESAS / LOGOS)
+// ============================================================================
+
+/**
+ * Título de introdução do carrossel infinito (Marquee) de empresas.
+ */
 export const TRUST_SECTION_TEXT = {
   title: "Engenheiros das melhores empresas já participaram",
 };
 
+/**
+ * Lista das empresas fictícias exibidas no Marquee.
+ * As cores dos logos são geradas matematicamente no componente usando a abreviação (abbr).
+ */
 export const BRAND_LOGOS: BrandLogo[] = [
   { name: "NovaTech", abbr: "NT" },
   { name: "ScalrIO", abbr: "SI" },
@@ -96,7 +150,13 @@ export const BRAND_LOGOS: BrandLogo[] = [
   { name: "GridStack", abbr: "GS" },
 ];
 
-// Textos da seção de Benefícios
+// ============================================================================
+// BENEFITS SECTION (MÓDULOS / O QUE VAI APRENDER)
+// ============================================================================
+
+/**
+ * Cabeçalho e descrição da seção de conteúdo/módulos da Masterclass.
+ */
 export const BENEFITS_SECTION_TEXT = {
   tagline: "O que você vai dominar",
   title: "Conteúdo técnico denso.",
@@ -105,7 +165,11 @@ export const BENEFITS_SECTION_TEXT = {
     "Nada de teoria vaga ou conceitos superficiais. Cada módulo tem exemplos de código, diagramas de arquitetura e decisões reais que você pode levar para o trabalho.",
 };
 
-// Array de Benefícios com as novas cores Púrpura/Magenta
+/**
+ * Configuração detalhada de cada módulo de ensino.
+ * Cada benefício possui ícone, cores dinâmicas oklch (Púrpura, Magenta, Violeta, Índigo)
+ * e conteúdo que popula os cards com Glassmorphism.
+ */
 export const BENEFITS: Benefit[] = [
   {
     icon: GitBranch,
@@ -149,18 +213,27 @@ export const BENEFITS: Benefit[] = [
   },
 ];
 
-// Textos da seção de Depoimentos (Prova Social)
+// ============================================================================
+// TESTIMONIALS SECTION (DEPOIMENTOS)
+// ============================================================================
+
+/**
+ * Títulos de introdução da seção de depoimentos de alunos.
+ */
 export const TESTIMONIALS_SECTION_TEXT = {
   tagline: "Prova social",
   title: "Quem participou, voltou diferente.",
 };
 
+/**
+ * Lista de depoimentos para o grid de prova social profunda.
+ */
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Rafael Mendonça",
     role: "Staff Engineer · VestLine",
     avatar: "RM",
-    text: "Essa masterclass reorganizou completamente a forma como eu penso sobre sistemas...",
+    text: "Essa masterclass reorganizou completamente a forma como eu penso sobre sistemas. Em 3 horas aprendi mais do que em meses de leitura esparsa. Os exemplos com código real fazem toda a diferença — você sai com um framework mental aplicável no dia seguinte.",
     stars: 5,
     highlight: "Aprendi mais em 3 horas do que em meses de leitura esparsa.",
   },
@@ -168,20 +241,20 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Camila Torres",
     role: "Tech Lead · KrianPy",
     avatar: "CT",
-    text: "Fui cética no começo, porque já tenho bastante experiência. Mas o conteúdo...",
+    text: "Fui cética no começo, porque já tenho bastante experiência. Mas o conteúdo sobre tolerância a falhas e a forma prática de implementar Circuit Breakers foi algo que nunca tinha visto explicado com tanta clareza. Recomendo para qualquer sênior que quer evoluir para Staff.",
     stars: 5,
     highlight:
       "Nunca tinha visto Circuit Breakers explicados com tanta clareza.",
   },
 ];
 
-export const EVENT_STATS: EventStat[] = [
-  { icon: Users, value: "4.200+", label: "Engenheiros inscritos" },
-  { icon: Clock, value: "3h30", label: "De conteúdo denso" },
-  { icon: CalendarDays, value: "Ao vivo", label: "Com sessão de Q&A" },
-];
+// ============================================================================
+// CTA SECTION (CHAMADA PARA AÇÃO FINAL)
+// ============================================================================
 
-// Textos da seção de Call to Action (CTA)
+/**
+ * Textos da seção final de conversão, ancorando o usuário para o formulário.
+ */
 export const CTA_SECTION_TEXT = {
   titleLine1: "Ainda na dúvida?",
   titleLine2: "É gratuito. Sem truques.",
@@ -191,13 +264,20 @@ export const CTA_SECTION_TEXT = {
   footerText: "Sem cartão de crédito · Cancele quando quiser · 100% gratuito",
 };
 
-// Informações da Marca e Rodapé
-export const BRAND_NAME = "VortexUI";
+// ============================================================================
+// FOOTER (RODAPÉ)
+// ============================================================================
 
+/**
+ * Textos gerais de direitos e copyright do rodapé.
+ */
 export const FOOTER_TEXT = {
   copyright: "Todos os direitos reservados.",
 };
 
+/**
+ * Array de links de documentação legal ou navegação exibidos no rodapé.
+ */
 export const FOOTER_LINKS = [
   { label: "Política de Privacidade", href: "#" },
   { label: "Termos de Uso", href: "#" },

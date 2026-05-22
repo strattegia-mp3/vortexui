@@ -19,7 +19,7 @@ export function Footer() {
             className="flex h-7 w-7 items-center justify-center rounded-lg"
             style={{
               background:
-                "linear-gradient(135deg, var(--color-brand-500), var(--color-accent-500))", // Gradiente Púrpura para Magenta
+                "linear-gradient(135deg, var(--color-brand-500), var(--color-accent-500))",
             }}
           >
             <Orbit size={13} className="text-white" strokeWidth={2.5} />

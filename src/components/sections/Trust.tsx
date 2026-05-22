@@ -11,7 +11,7 @@ export function Trust() {
       className="relative overflow-hidden border-y py-10"
       style={{
         borderColor: "var(--color-border-subtle)",
-        background: "var(--glass-base)", // Atualizado para suportar light/dark mode
+        background: "var(--glass-base)",
       }}
       aria-label={TRUST_SECTION_TEXT.title}
     >
@@ -47,7 +47,7 @@ export function Trust() {
               key={`${logo.name}-${i}`}
               className="flex items-center gap-2.5 rounded-xl px-5 py-2.5 transition-all duration-200"
               style={{
-                background: "var(--glass-strong)", // Atualizado para suportar light/dark mode
+                background: "var(--glass-strong)",
                 border: "1px solid var(--color-border-subtle)",
               }}
               aria-label={logo.name}
@@ -55,7 +55,6 @@ export function Trust() {
               <div
                 className="flex h-6 w-6 items-center justify-center rounded-md text-[9px] font-black text-white"
                 style={{
-                  /* Fórmula ajustada para girar entre tons de Púrpura e Magenta (Hue 280 a 340) */
                   background: `linear-gradient(135deg, oklch(65% 0.22 ${280 + ((i * 15) % 60)}), oklch(55% 0.24 ${300 + ((i * 15) % 60)}))`,
                 }}
               >

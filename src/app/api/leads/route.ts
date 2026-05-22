@@ -142,10 +142,6 @@ export async function POST(
 
     console.error("[API /leads] Unexpected error:", errorMessage);
 
-    // In production with Sentry:
-    // import * as Sentry from "@sentry/nextjs";
-    // Sentry.captureException(error, { extra: { endpoint: "/api/leads" } });
-
     return NextResponse.json(
       {
         success: false,
