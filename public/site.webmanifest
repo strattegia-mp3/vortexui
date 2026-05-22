@@ -1,0 +1,36 @@
+{
+  "name": "VortexUI - Masterclass",
+  "short_name": "VortexUI",
+  "description": "Masterclass online e gratuita sobre arquitetura de sistemas escaláveis com exemplos reais de produção.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#150b1a",
+  "theme_color": "#150b1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "technology"
+  ],
+  "lang": "pt-BR",
+  "dir": "ltr"
+}

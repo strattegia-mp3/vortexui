@@ -1,0 +1,377 @@
+@import "tailwindcss";
+
+/* =========================================================
+   VortexUI — Global Design System
+   Tailwind CSS v4 CSS-first configuration via @theme
+   ========================================================= */
+
+/* --- Theme Variables (Light/Dark Mode Setup) --- */
+:root {
+  /* Light Mode Surfaces (Hue: 290 - Purple) */
+  --surf-0: oklch(98% 0.01 290);
+  --surf-1: oklch(95% 0.02 290);
+  --surf-2: oklch(92% 0.03 290);
+  --surf-3: oklch(88% 0.04 290);
+  --surf-4: oklch(82% 0.05 290);
+
+  /* Light Mode Borders */
+  --border-sub: oklch(0% 0 0 / 0.08);
+  --border-def: oklch(0% 0 0 / 0.15);
+  --border-str: oklch(0% 0 0 / 0.3);
+
+  /* Light Mode Text */
+  --text-pri: oklch(25% 0.04 290);
+  --text-sec: oklch(45% 0.03 290);
+  --text-ter: oklch(60% 0.02 290);
+
+  /* Light Mode Elements */
+  --glass-base: oklch(0% 0 0 / 0.03);
+  --glass-strong: oklch(0% 0 0 / 0.06);
+}
+
+.dark {
+  /* Dark Mode Surfaces (Hue: 290 - Purple) */
+  --surf-0: oklch(8% 0.02 290);
+  --surf-1: oklch(11% 0.025 290);
+  --surf-2: oklch(14% 0.03 290);
+  --surf-3: oklch(18% 0.035 290);
+  --surf-4: oklch(22% 0.04 290);
+
+  /* Dark Mode Borders */
+  --border-sub: oklch(100% 0 0 / 0.07);
+  --border-def: oklch(100% 0 0 / 0.12);
+  --border-str: oklch(100% 0 0 / 0.22);
+
+  /* Dark Mode Text */
+  --text-pri: oklch(96% 0.01 290);
+  --text-sec: oklch(75% 0.02 290);
+  --text-ter: oklch(55% 0.03 290);
+
+  /* Dark Mode Elements */
+  --glass-base: oklch(100% 0 0 / 0.04);
+  --glass-strong: oklch(100% 0 0 / 0.07);
+}
+
+@theme {
+  /* --- Typography --- */
+  --font-display: "Sora", "SF Pro Display", system-ui, sans-serif;
+  --font-body: "DM Sans", "SF Pro Text", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* --- Dynamic Theme Tokens --- */
+  --color-surface-0: var(--surf-0);
+  --color-surface-1: var(--surf-1);
+  --color-surface-2: var(--surf-2);
+  --color-surface-3: var(--surf-3);
+  --color-surface-4: var(--surf-4);
+
+  --color-border-subtle: var(--border-sub);
+  --color-border-default: var(--border-def);
+  --color-border-strong: var(--border-str);
+
+  --color-text-primary: var(--text-pri);
+  --color-text-secondary: var(--text-sec);
+  --color-text-tertiary: var(--text-ter);
+
+  /* --- Brand Color Palette (Purple - Hue 290) --- */
+  --color-brand-50: oklch(97% 0.02 290);
+  --color-brand-100: oklch(93% 0.05 290);
+  --color-brand-200: oklch(87% 0.09 290);
+  --color-brand-300: oklch(78% 0.14 290);
+  --color-brand-400: oklch(68% 0.18 290);
+  --color-brand-500: oklch(58% 0.22 290);
+  --color-brand-600: oklch(50% 0.24 290);
+  --color-brand-700: oklch(42% 0.22 290);
+  --color-brand-800: oklch(32% 0.18 290);
+  --color-brand-900: oklch(22% 0.12 290);
+
+  /* Accent — Vibrant Magenta (Hue 330) */
+  --color-accent-400: oklch(82% 0.18 330);
+  --color-accent-500: oklch(72% 0.22 330);
+  --color-accent-600: oklch(62% 0.24 330);
+
+  /* Success / Error */
+  --color-success-400: oklch(78% 0.18 148);
+  --color-success-500: oklch(68% 0.22 148);
+  --color-error-400: oklch(72% 0.2 25);
+  --color-error-500: oklch(62% 0.24 25);
+
+  /* --- Spacing scale --- */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+
+  /* --- Border radius --- */
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+
+  /* --- Shadows --- */
+  --shadow-glow-brand: 0 0 40px -8px oklch(58% 0.22 290 / 0.5);
+  --shadow-glow-accent: 0 0 60px -10px oklch(72% 0.22 330 / 0.4);
+  --shadow-card:
+    0 8px 32px -8px oklch(0% 0 0 / 0.4), 0 2px 8px -2px oklch(0% 0 0 / 0.2);
+  --shadow-glass: 0 4px 24px -4px oklch(0% 0 0 / 0.3);
+
+  /* --- Transitions --- */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Animation keyframes --- */
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-pulse-glow: pulse-glow 2.5s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s var(--ease-out-expo) both;
+  --animate-scale-in: scale-in 0.5s var(--ease-spring) both;
+  --animate-draw: draw 0.8s var(--ease-out-expo) both;
+  --animate-spin-slow: spin 2s linear infinite;
+}
+
+/* --- Keyframe definitions --- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px -4px oklch(58% 0.22 290 / 0.6),
+      0 0 40px -8px oklch(58% 0.22 290 / 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 30px -4px oklch(58% 0.22 290 / 0.9),
+      0 0 60px -8px oklch(58% 0.22 290 / 0.5),
+      0 0 80px -16px oklch(72% 0.22 330 / 0.3);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --- Global base reset & tokens --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface-0);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* --- Noise texture overlay --- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* --- Focus styles --- */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --- Selection color --- */
+::selection {
+  background-color: oklch(58% 0.22 290 / 0.3);
+  color: var(--color-text-primary);
+}
+
+/* --- Scrollbar styling --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-4);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-600);
+}
+
+/* --- Utility classes --- */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass {
+  background: var(--glass-base);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--color-border-default);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid var(--color-border-strong);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-text-primary) 0%,
+    var(--color-accent-500) 50%,
+    var(--color-brand-400) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-brand {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-400) 0%,
+    var(--color-accent-500) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-brand {
+  box-shadow: var(--shadow-glow-brand);
+}
+
+.animate-pulse-glow {
+  animation: var(--animate-pulse-glow);
+}
+.animate-fade-up {
+  animation: var(--animate-fade-up);
+}
+.animate-scale-in {
+  animation: var(--animate-scale-in);
+}
+.animate-marquee {
+  animation: var(--animate-marquee);
+}
+.animate-spin-slow {
+  animation: var(--animate-spin-slow);
+}
+
+/* Staggered animation delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+/* Marquee pause on hover */
+.marquee-wrapper:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Input autofill style override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-text-primary);
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-surface-2) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Gradient mesh background blobs */
+.bg-blob-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(58% 0.22 290 / 0.12) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.bg-blob-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(72% 0.22 330 / 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+}
